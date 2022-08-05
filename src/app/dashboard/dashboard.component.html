@@ -1,0 +1,40 @@
+<!-- <p>Welcome to {{authService.authUserData?.fullName}}</p> -->
+<kendo-grid  [data]="institutionList">
+    <kendo-grid-column *ngFor="let col of institutionGridSettings?.columnsConfig" [field]="col.field"
+           [width]="col.width" [title]="col.title" [ngSwitch]="col.field">
+           <ng-template kendoGridCellTemplate let-dataItem *ngSwitchCase="'img'">
+            <div class="kendogridimgcell">
+                <i *ngIf="!dataItem.logoURL"class="institution-default-icon ie ie-institution-building lh-normal"></i>
+                <img width="32" height="32" *ngIf="dataItem.logoURL" class="kendogridimgcell_img"[src]="dataItem.logoURL" alt="Infinity">
+            </div>
+        </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem *ngSwitchCase="'created'">
+            {{ dataItem.created}}
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem *ngSwitchCase="'name'">
+            <a >
+              <div class="text-truncate" title=" {{dataItem.name}}">{{ dataItem.name }}</div>
+            </a>
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem *ngSwitchCase="'city'">
+            <a >
+              <div class="text-truncate" title=" {{dataItem.city}}">{{ dataItem.city}}</div>
+            </a>
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem *ngSwitchCase="'active'">
+            <a >
+              <div class="text-truncate" title=" {{dataItem.active}}">{{ dataItem.active }}</div>
+            </a>
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem *ngSwitchCase="'delete'">
+            <a >
+              <div class="text-truncate" title=" {{dataItem.delete}}">Delete</div>
+            </a>
+          </ng-template>
+      </kendo-grid-column>
+</kendo-grid> 
+<button  class="btn btn btn-primary m-2" [routerLink]="['../userlist']">Go to Userlist</button>
+
+
+
+

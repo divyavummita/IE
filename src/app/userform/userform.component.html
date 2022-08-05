@@ -1,0 +1,23 @@
+<div class='container'>
+    <div class='row d-flex justify-content-center align-items-center'>
+        <div class='col-md-4'>
+            <form form #form="ngForm">
+              <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="newpost.firstName" required>
+              </div>
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="newpost.lastName" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="newpost.email" required>
+              </div>
+              <button type="submit" class="btn btn-success m-4" (click)="save()">Save</button>
+              <button type="submit" class="btn btn-primary " [routerLink]="['/', customer.customerData.key, 'userlist']">cancel</button>
+            </form>
+        </div>
+    </div>
+  </div>
+

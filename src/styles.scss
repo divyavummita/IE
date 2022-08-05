@@ -1,0 +1,17 @@
+@import '~node_modules/bootstrap/scss/bootstrap';
+
+
+.container{
+    border: 2px solid;
+}
+.row {
+    height: calc(100vh - 4px)
+}
+form{
+    border: 2px solid;
+    padding: 50px 60px;
+}
+img{
+    width: 60px;
+    border-radius:50px
+}
